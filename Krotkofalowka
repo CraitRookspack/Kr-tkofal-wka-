@@ -9,7 +9,6 @@ if not msg then return end
       end
    end
 end
-end
 )
 
 addEventHandler("onPlayerJoin", root,
