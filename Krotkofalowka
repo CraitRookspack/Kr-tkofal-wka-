@@ -1,15 +1,20 @@
+--[[
+Skrypt wykonany przez: @Rookspack
+gtao.pl
+--]]
+
+
 addCommandHandler("Frakcja",
 function(plr, cmd, ...)
 local msg = table.concat({...}," ")
 if not msg then return end
    for _,v in ipairs(getElementsByType("player")) do
       local accName = getAccountName(getPlayerAccount(v)) 
-      if isObjectInACLGroup ("user."..accName, aclGetGroup ( "Policja" ) ) then
-         outputChatBox("[Policja] "..getPlayerName(plr)..": "..msg, v)
-      end
-   end
+      if isObjectInACLGroup ("user."..accName, aclGetGroup ( "Admin" ) ) then
+         outputChatBox("#000099[Policja]#FFFFFF"..getPlayerName(plr)..": "..msg, v, 255, 255, 255, true)
 end
-)
+end
+end)
 
 addEventHandler("onPlayerJoin", root,
 function()
